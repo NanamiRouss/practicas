@@ -1,16 +1,18 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- *
+ * 
+ * props
+ * 
  * @format
- * @flow strict-local
+ * @flow
  */
 
- import React, { Component } from 'react';
+ import React, {Component} from 'react';
  import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
  
  class App extends Component {
-   constructor(props){
+   constructor(props) {
      super(props);
  
      this.state = {
@@ -21,44 +23,41 @@
      this.handleDown = this.handleDown.bind(this);
    }
  
-    handleUp() {
-      const { counter: c } = this.state;
-      this.setState({ counter: c + 1 });
- 
-    }
- 
-    handleDown() {
-     const { counter: c } = this.state;
-     this.setState({ counter: c - 1 });
- 
+   handleUp() {
+     const { counter: ct } = this.state;
+     this.setState({ counter: ct + 1 });
+   }
+   
+   handleDown() {
+     const { counter: ct } = this.state;
+     this.setState({ counter: ct - 1 });
    }
  
    render() {
-     const {counter} = this.state;
+     const { counter } = this.state;
+ 
      return (
-     <View style={styles.container}>
-       <View style={styles.subcontainer}>
-         <TouchableOpacity 
-         style={styles.btn}
-         onPress={this.handleDown}
-         >
-           <Text style={styles.btnTxt}>-</Text>
-         </TouchableOpacity>
+       <View style={styles.container}>
+         <View style={styles.subcontainer}>
+             <TouchableOpacity
+               style={styles.btn}
+               onPress={this.handleDown}
+             >
+               <Text style={styles.btnTxt}>-</Text>
+             </TouchableOpacity>
  
-         <View style={styles.counterContainer}>
-          <Text style={styles.counter}>{counter}</Text>
+             <View style={styles.counterContainer}>
+               <Text style={styles.counter}>{counter}</Text>
+             </View>
  
+             <TouchableOpacity
+               style={styles.btn}
+               onPress={this.handleUp}
+             >
+               <Text style={styles.btnTxt}>+</Text>
+             </TouchableOpacity>
          </View>
- 
-         <TouchableOpacity 
-         style={styles.btn}
-         onPress={this.handleUp}
-         >
-           <Text style={styles.btnTxt}>+</Text>
-         </TouchableOpacity>
- 
        </View>
-     </View>
      );
    }
  }
@@ -69,7 +68,7 @@
      backgroundColor: '#2c3e50',
      justifyContent: 'center',
    },
-   subcontainer:{
+   subcontainer: {
      height: 50,
      width: '100%',
      paddingHorizontal: 10,
@@ -97,8 +96,6 @@
      color: '#FFF',
      fontWeight: 'bold',
    },
- 
  });
  
  export default App;
- 
